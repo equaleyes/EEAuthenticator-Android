@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickHandler"
+            type="com.equaleyes.qrcodeandroid.MainActivity"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:keepScreenOn="true"
+        android:layout_gravity="bottom"
+        tools:context="com.equaleyes.qrcodeandroid.MainActivity">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{clickHandler.onClickShowCodes}"
+            android:text="Show Codes"
+            android:layout_gravity="bottom"/>
+
+        <com.equaleyes.qrcodeandroid.reader.CameraSourcePreview
+            android:id="@+id/preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.equaleyes.qrcodeandroid.reader.GraphicOverlay
+                android:id="@+id/graphicOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </com.equaleyes.qrcodeandroid.reader.CameraSourcePreview>
+    </FrameLayout>
+</layout>
